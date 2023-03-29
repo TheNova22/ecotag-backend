@@ -645,6 +645,21 @@ def reverse_loc():
 
     return dumps({"state" : geocoder.osm([details["lat"], details["long"]], method='reverse').state})
 
+@app.route('/enterFormValues',methods=['POST'])
+def enter_form_value():
+
+    """
+    POST request | Add an inspection form
+    Json params : ["manufacturer", "inputFields", "inputTypes", "formName", "makerName"]
+    """
+
+    details = request.json
+    formid = details["id"]
+    formValues = details["formValues"]
+
+    res = db["formEntries"].insert_one({"formid" : formid, "values" : formValues})
+
+    return json.dumps({"status" : res.acknowledged })
 
 if __name__ == "__main__":
     app.run('0.0.0.0',443,ssl_context=('/etc/letsencrypt/live/back.ecotag.dev/fullchain.pem', '/etc/letsencrypt/live/back.ecotag.dev/privkey.pem'))
