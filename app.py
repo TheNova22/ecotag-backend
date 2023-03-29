@@ -39,7 +39,7 @@ config = {
     "CACHE_REDIS_URL": 'redis://localhost:6379'
 }
 
-mongoClinet = pymongo.MongoClient("mongodb://127.0.0.1:27017/?directConnection=true&serverSelectionTimeoutMS=2000&appName=mongosh+1.3.1"))
+mongoClinet = pymongo.MongoClient("mongodb://127.0.0.1:27017/?directConnection=true&serverSelectionTimeoutMS=2000&appName=mongosh+1.3.1")
 redisclient  = redis.StrictRedis("localhost",port=6379,db=0,charset="utf-8", decode_responses=True)
 
 db = mongoClinet['new']
