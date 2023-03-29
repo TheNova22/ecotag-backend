@@ -3,3 +3,4 @@
 config.ini
 config writer.py
 /dataGenerator/config.ini
+getCode.sh
