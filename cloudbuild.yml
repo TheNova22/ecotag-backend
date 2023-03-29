@@ -5,7 +5,7 @@ steps:
     args:
     - '-c'
     - |
-      gcloud compute ssh --zone "asia-south1-c" "ecotag"  --project "gentle-nuance-380510" --ssh-key-file "~/.ssh/google_compute_engine" --command='sudo /home/jayantsogikar/getCode.sh'
+      gcloud compute ssh "jayant@ecotag" --zone "asia-south1-c"  --project "gentle-nuance-380510" --ssh-key-file "~/.ssh/google_compute_engine" --command='sudo /home/jayantsogikar/getCode.sh'
   
 options:
   logging: CLOUD_LOGGING_ONLY
