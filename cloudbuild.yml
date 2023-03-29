@@ -6,7 +6,7 @@ steps:
     - '-c'
     - |
       set -x && \
-      gcloud compute ssh --zone "asia-south1-c" "ecotag"  --project "gentle-nuance-380510" --command='/bin/sh /home/jayantsogikar/getCode.sh'
+      gcloud compute ssh --zone "asia-south1-c" "ecotag"  --project "gentle-nuance-380510" --command='sudo /home/jayantsogikar/getCode.sh'
   
 options:
   logging: CLOUD_LOGGING_ONLY

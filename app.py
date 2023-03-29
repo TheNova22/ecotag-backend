@@ -65,7 +65,7 @@ def getImage(name):
 
 @app.route('/')
 def home_page():
-    return 'Hello from EcoTag!'
+    return 'Welcome to Ecotag!'
 
 
 @app.route('/getProduct')
