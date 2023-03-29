@@ -1,0 +1,38 @@
+,index,LOCODE,Name,NameWoDiacritics,SubDiv,Function,Status,Date,Coordinates,Latitude,Longitude
+0,21,IN AMD,Ahmedabad,Ahmedabad,GJ,-234-6--,AA,407.0,2302N 07237E,23.02,72.37
+1,35,IN IXV,Along Apt,Along Apt,AR,--34----,RL,901.0,2810N 09446E,28.1,94.46
+2,105,IN BLR,Bangalore,Bangalore,KA,-234-6--,AA,501.0,1259N 07735E,12.59,77.35
+3,156,IN BHU,Bhavnagar,Bhavnagar,GJ,1234----,AA,207.0,2146N 07208E,21.46,72.08
+4,173,IN BHO,Bhopal,Bhopal,MP,---4----,AI,1401.0,2316N 07724E,23.16,77.24
+5,220,IN IXC,Chandigarh,Chandigarh,PB,---4----,AI,1401.0,3044N 07647E,30.44,76.47
+6,225,IN CSI,Chattrapati Shivaji International Apt,Chattrapati Shivaji International Apt,MH,-234----,RL,701.0,1905N 07252E,19.05,72.52
+7,229,IN MAA,Chennai (ex Madras),Chennai (ex Madras),TN,12345---,AA,407.0,1305N 08017E,13.05,80.17
+8,252,IN COK,Cochin,Cochin,KL,1234-6--,AA,307.0,0958N 07614E,9.58,76.14
+9,296,IN DED,Dehra Dun,Dehra Dun,UT,---4----,AI,1601.0,3019N 07802E,30.19,78.02
+10,425,IN GOP,Gorakhpur,Gorakhpur,UP,-234----,AI,207.0,2645N 08321E,26.45,83.21
+11,444,IN GWL,Gwalior,Gwalior,MP,-234-6--,AI,501.0,2613N 07810E,26.13,78.1
+12,496,IN IDR,Indore,Indore,MP,--34-6--,AA,401.0,2243N 07550E,22.43,75.5
+13,524,IN JAI,Jaipur,Jaipur,RJ,-234-6--,AA,407.0,2655N 07549E,26.55,75.49
+14,536,IN IXJ,Jammu,Jammu,JK,1234-6--,AI,701.0,3242N 07451E,32.42,74.51
+15,538,IN IXW,Jamshedpur,Jamshedpur,JH,-234----,AI,1401.0,2248N 08611E,22.48,86.11
+16,557,IN JDH,Jodhpur,Jodhpur,RJ,--34-6--,AA,1101.0,2615N 07302E,26.15,73.02
+17,589,IN IXY,Kandla,Kandla,GJ,1234-6--,AA,307.0,2302N 07013E,23.02,70.13
+18,594,IN KNN,Kannur,Kannur,KL,--34----,AA,2007.0,1151N 07522E,11.51,75.22
+19,675,IN KLH,Kolhåpur,Kolhapur,MH,--34----,AI,401.0,1642N 07413E,16.42,74.13
+20,676,IN CCU,Kolkata (ex Calcutta),Kolkata (ex Calcutta),WB,1--45---,AA,201.0,2234N 08821E,22.34,88.21
+21,693,IN CCJ,Kozhikode (ex Calicut),Kozhikode (ex Calicut),KL,1234----,AA,207.0,1115N 07546E,11.15,75.46
+22,745,IN IXM,Madurai,Madurai,TN,1-34-6--,AI,701.0,0956N 07807E,9.56,78.07
+23,827,IN BOM,Mumbai (ex Bombay),Mumbai (ex Bombay),MH,123456--,AA,501.0,1858N 07249E,18.58,72.49
+24,862,IN ISK,Nasik,Nasik,MH,---4-6--,AA,907.0,1959N 07348E,19.59,73.48
+25,969,IN PNY,Pondicherry,Pondicherry,PY,1-34-6--,AA,501.0,1155N 07949E,11.55,79.49
+26,1009,IN RPR,Raipur,Raipur,CT,---4-6--,AA,1401.0,2114N 08138E,21.14,81.38
+27,1017,IN RAJ,Rajkot,Rajkot,GJ,-234-6--,AI,407.0,2217N 07047E,22.17,70.47
+28,1032,IN IXR,Ranchi,Ranchi,BR,-234----,AI,207.0,2321N 08520E,23.21,85.2
+29,1090,IN STN,Satna,Satna,MP,---4----,RQ,907.0,2435N 08050E,24.35,80.5
+30,1186,IN STV,Surat,Surat,GJ,1234-6--,AI,307.0,2110N 07250E,21.1,72.5
+31,1217,IN TRV,Thiruvananthapuram (ex Trivandrum),Thiruvananthapuram (ex Trivandrum),KL,-234----,AI,1207.0,0829N 07655E,8.29,76.55
+32,1267,IN BDQ,Vadodara,Vadodara,GJ,1234----,AI,1207.0,2218N 07312E,22.18,73.12
+33,1275,IN VNS,Varanasi,Varanasi,UP,--34-6--,AA,1301.0,2520N 08300E,25.2,83.0
+34,1293,IN GWM,Vijayawada International Airport/Gannavaram,Vijayawada International Airport/Gannavaram,AP,---4----,AA,1907.0,1631N 08037E,16.31,80.37
+35,1298,IN VTZ,Visakhapatnam,Visakhapatnam,AP,1234-6--,AA,307.0,1742N 08318E,17.42,83.18
+36,1323,IN ZER,Zero (Ziro),Zero (Ziro),AP,---4----,RL,907.0,2738N 09350E,27.38,93.5
