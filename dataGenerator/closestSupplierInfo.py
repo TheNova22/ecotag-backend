@@ -22,49 +22,36 @@ def getSupplierInfo(query,l1,l2):
     if data is not None:
         tosend = json.loads(data)
     else:
-        url = "https://www.tradeindia.com/search.html?loggedin_sellers=0&loggedin_profiles_list=0&keyword={}&search_form_id=18&list_type=search&paginate=1&page_no={}&_=1659683889285".format(searchparam,page)
-        soup = BeautifulSoup(req.get(url).content,features="html.parser")
-        x = soup.findAll("li",attrs={"class":"bx--row product-box fullContainerBg relative"})
+        url = "https://www.tradeindia.com/search.html?loggedin_sellers=0&loggedin_profiles_list=0&keyword={}".format(searchparam)
+        body = req.get(url).content
+        with open("hi.html","w") as f:
+            f.write(str(body))
+        soup = BeautifulSoup(body,features="html.parser")
+        x = soup.find("script",attrs={"type":"application/json"})
+        y = json.loads(x.text)
+        y = y["props"]["pageProps"]["serverData"]["searchListingData"]["listing_data"]
         data = []
-        for i in x:
+        print(len(y))
+        for i in y:
             d = {}
-            pricetemp = i.find("span",attrs={"class":"fs-16 font-w-500 priceColor"})
-            d["price"] = "" if not pricetemp else pricetemp.text.strip()
 
-            if d["price"] == "":
-                continue
-            # image url first
-            imgtemp = i.find('img')['src'] 
-            d['image_url'] = imgtemp if imgtemp else ""
-
-            
-            # print(pricetemp.text)
-
-            # name of product 2nd 
-            headertemp = i.find('h3').text
-            d['product_title'] = headertemp if headertemp else " ".join(searchtext)
-            # manufacturer name
-            nametemp = i.find('div',attrs={"class":"text-6 companyNameMobile"}).text
-            d['manufacturer_name'] = nametemp if nametemp else " ".join(searchtext)
-            # manufacture address
-            addresstemp = i.find('div',attrs={"class":"feature-list"}).text.split('\n')[0]
-            addresstemp = addresstemp.replace('Online','')
-            # print(addresstemp)
-            d['manufacturer_address'] = addresstemp if addresstemp else "call to get address"
-            # get direct link to the product
-            urltemp = i.find('a')['href']
-            d['product_link'] = "https://www.tradeindia.com/" + (urltemp if urltemp else "")
+            d['product_title'] = i.get("long_tail_prod_name"," ".join(searchtext))
+            d["price"] = i.get("price","Contact to get Price")
+            d['image_url'] =  i.get("product_image","")
+            d['manufacturer_name'] = i.get("co_name","")
+            addresstemp = i.get("address","Online")
+            d['manufacturer_address'] = i.get("address","call to get address")
+            urltemp = i.get("prod_url","")
+            d['product_link'] = "https://www.tradeindia.com" + (urltemp if urltemp else "")
+            addresstemp = i.get("state","Delhi")
             g = geocoder.osm(addresstemp)
-            # print(addresstemp)
-            d['osm'] = {'lat' : g.json['lat'],'lng':g.json['lng']}
+            if g:
+                d['osm'] = {'lat' : g.json['lat'],'lng':g.json['lng']}
             data.append(d)
-        # redisclient.set(searchparam, json.dumps(data))
         for d in data:
-            d['distance'] = distance(l1,l2,d['osm']['lat'],d['osm']['lng'])
-        # with open("./hekki.json",'w') as f:
-        #     json.dump({"products":data},f,indent=4)
+            if "osm" in d:
+                d['distance'] = distance(l1,l2,d['osm']['lat'],d['osm']['lng'])
+                print(d["distance"])
     return data
-        
-        # print(req.get(url).content)
-        # print(url)
+
 # print(getSupplierInfo("Mix fruit jam",12.930000569995991, 77.61684039833547))
