@@ -55,7 +55,6 @@ def getSupplierInfo(query,l1,l2):
             urltemp = i.get("prod_url","")
             d['product_link'] = "https://www.tradeindia.com" + (urltemp if urltemp else "")
             addresstemp = i.get("state","Delhi")
-            print(i.get("state"))
             g = geocoder.osm(addresstemp)
             if g:
                 d['osm'] = {'lat' : g.json['lat'],'lng':g.json['lng']}
@@ -66,4 +65,4 @@ def getSupplierInfo(query,l1,l2):
                 print(d["distance"])
     return data
 
-print(getSupplierInfo("Mix fruit jam",12.930000569995991, 77.61684039833547))
+# print(getSupplierInfo("Mix fruit jam",12.930000569995991, 77.61684039833547))
