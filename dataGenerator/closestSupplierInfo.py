@@ -1,15 +1,26 @@
-from math import cos, asin, sqrt, pi
-# import redis
+from math import radians, sin, cos, sqrt, atan2
 import requests as req
 from bs4 import BeautifulSoup
 import geocoder
 import json
 
 def distance(lat1, lon1, lat2, lon2):
-    p = pi/180
-    a = 0.5 - cos((lat2-lat1)*p)/2 + cos(lat1*p) * cos(lat2*p) * (1-cos((lon2-lon1)*p))/2
-    return 12742 * asin(sqrt(a))
+    R = 6373.0
 
+    lat1 = radians(lat1)
+    lon1 = radians(lon1)
+    lat2 = radians(lat2)
+    lon2 = radians(lon2)
+
+    dlat = lat2 - lat1
+    dlon = lon2 - lon1
+
+    a = sin(dlat / 2)**2 + cos(lat1) * cos(lat2) * sin(dlon / 2)**2
+    c = 2 * atan2(sqrt(a), sqrt(1 - a))
+
+    distance_km = R * c
+
+    return distance_km
 
 
 def getSupplierInfo(query,l1,l2):
@@ -44,6 +55,7 @@ def getSupplierInfo(query,l1,l2):
             urltemp = i.get("prod_url","")
             d['product_link'] = "https://www.tradeindia.com" + (urltemp if urltemp else "")
             addresstemp = i.get("state","Delhi")
+            print(i.get("state"))
             g = geocoder.osm(addresstemp)
             if g:
                 d['osm'] = {'lat' : g.json['lat'],'lng':g.json['lng']}
@@ -54,4 +66,4 @@ def getSupplierInfo(query,l1,l2):
                 print(d["distance"])
     return data
 
-# print(getSupplierInfo("Mix fruit jam",12.930000569995991, 77.61684039833547))
+print(getSupplierInfo("Mix fruit jam",12.930000569995991, 77.61684039833547))
